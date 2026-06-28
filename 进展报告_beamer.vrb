@@ -1,0 +1,39 @@
+\frametitle{类设计概览}
+\small
+  \begin{columns}[t]
+    \column{0.45\textwidth}
+    \begin{block}{核心类}
+      \begin{tabular}{ll}
+        \textbf{databaseManager} & 单例，SQLite 数据访问层 \\
+        \textbf{LoginDialog}     & 登录/注册对话框 \\
+        \textbf{MainWindow}      & QTabWidget 管理 5 页 \\
+        \textbf{BillWidget}      & 账单 CRUD + CSV 导出 \\
+        \textbf{CategoryManager} & 收支分类管理 \\
+        \textbf{BudgetWidget}    & 月度预算 + 变色预警 \\
+        \textbf{SearchFilter}    & 多条件组合筛选 \\
+        \textbf{Visualization}   & 饼图 + 折线图 \\
+      \end{tabular}
+    \end{block}
+
+    \column{0.55\textwidth}
+    \begin{block}{协作关系}
+\begin{verbatim}
+main.cpp
+  ├── LoginDialog → databaseManager
+  └── MainWindow
+        ├── BillWidget → DB
+        │     └── billsChanged() → BudgetWidget
+        ├── CategoryManager → DB
+        ├── BudgetWidget → DB
+        ├── SearchFilter → DB
+        └── Visualization → DB
+\end{verbatim}
+    \end{block}
+  \end{columns}
+
+  \vspace{6pt}
+  \begin{center}
+    \small
+    数据库 5 表：\texttt{users} $\cdot$ \texttt{accounts} $\cdot$ \texttt{categories} $\cdot$ \texttt{bills} $\cdot$ \texttt{budgets}
+    \quad 全部通过外键关联，\texttt{ON DELETE CASCADE} 保证完整性
+  \end{center}
