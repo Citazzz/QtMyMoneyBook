@@ -1,7 +1,0 @@
-\beamer@sectionintoc {1}{项目概述}{2}{0}{1}
-\beamer@sectionintoc {2}{登录与注册}{3}{0}{2}
-\beamer@sectionintoc {3}{账单管理}{4}{0}{3}
-\beamer@sectionintoc {4}{分类管理 \& 预算管理}{5}{0}{4}
-\beamer@sectionintoc {5}{搜索筛选 \& 数据可视化}{6}{0}{5}
-\beamer@sectionintoc {6}{类设计}{7}{0}{6}
-\beamer@sectionintoc {7}{开发进展与差异}{8}{0}{7}

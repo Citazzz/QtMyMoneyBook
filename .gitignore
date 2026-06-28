@@ -82,3 +82,13 @@ CMakeLists.txt.user*
 .uic/
 /build*/
 /.qtcreator/
+
+# IDE and tool config
+.vscode/
+.claude/
+
+# User data
+images/
+
+# Beamer / LaTeX auxiliary files
+*_beamer.*
